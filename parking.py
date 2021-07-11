@@ -1,5 +1,5 @@
 class ParkingGarage():
-
+    
     def __init__(self, tickets, parkingSpaces, currentTicket):
         self.tickets = tickets
         self.parkingSpaces = parkingSpaces
@@ -15,27 +15,23 @@ class ParkingGarage():
         value = input("Please press any key to pay: ")
         if value is not None:
             self.currentTicket[payTicket] = "paid"
-            self.tickets.append(int(ticketNum))
-            self.parkingSpaces.append(int(ticketNum))
             print("ticket has been paid and you may leave")
 
     def leaveGarage(self, ticketNum):
         if self.currentTicket[int(ticketNum)] == 'paid':
             print("Thank you, have a nice day")
-            self.tickets.append(int(ticketNum))
+            self.tickets.append(int(ticketNum)) 
             self.parkingSpaces.append(int(ticketNum))
             self.tickets.sort()
             self.parkingSpaces.sort()
         else:
             print("Must pay first")
 
-
 tickets = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 parkingSpaces = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 currentTicket = {}
 
 garage = ParkingGarage(tickets, parkingSpaces, currentTicket)
-
 
 def runGarage():
     while True:
@@ -58,6 +54,5 @@ def runGarage():
             print(tickets)
         else:
             print("Command not recognized")
-
 
 runGarage()
